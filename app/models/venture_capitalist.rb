@@ -43,11 +43,10 @@ class VentureCapitalist
         end
     end
 
-    def invested(dom)
-        @dom=dom
+    def invested(domain)
         total=0
         FundingRound.all.each do |fundinground| 
-            if (fundinground.startup.domain == @dom && fundinground.venture_capitalist == self)
+            if (fundinground.startup.domain == domain && fundinground.venture_capitalist == self)
                 total += fundinground.investment
             end
         end
